@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Enlaces Directos - Google Drive</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>
+                <span class="icon">🔗</span>
+                Generador de Enlaces Directos
+                <span class="badge">Google Drive</span>
+            </h1>
+            
+            <p class="description">
+                Convierte cualquier enlace de Google Drive en un enlace de descarga directa.
+                Ideal para integrar en tus páginas web, scripts o gestores de descarga.
+            </p>
+
+            <div class="input-group">
+                <label for="driveUrl">Enlace de Google Drive:</label>
+                <input 
+                    type="text" 
+                    id="driveUrl" 
+                    placeholder="https://drive.google.com/file/d/ID_DEL_ARCHIVO/view"
+                    autocomplete="off"
+                >
+                <div class="button-group">
+                    <button id="generateBtn" class="btn-primary">
+                        <span>✨</span> Generar Enlace Directo
+                    </button>
+                    <button id="clearBtn" class="btn-clear">
+                        <span>🗑️</span> Limpiar Todo
+                    </button>
+                </div>
+            </div>
+
+            <div id="result" class="result hidden">
+                <div class="result-header">
+                    <span class="icon">✅</span>
+                    <strong>Enlace Directo Generado:</strong>
+                </div>
+                
+                <div class="link-container">
+                    <input type="text" id="directLink" readonly>
+                    <button id="copyBtn" class="btn-copy">
+                        📋 Copiar
+                    </button>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="testLinkBtn" class="btn-secondary">
+                        🔍 Probar Descarga
+                    </button>
+                    <button id="previewBtn" class="btn-preview" disabled>
+                        👁️ Vista Previa
+                    </button>
+                </div>
+
+                <div id="previewContainer" class="preview-container hidden">
+                    <div class="preview-header">
+                        <span class="icon">📄</span>
+                        <strong>Vista Previa del Documento</strong>
+                        <button id="closePreviewBtn" class="btn-close">✖</button>
+                    </div>
+                    <div id="previewContent" class="preview-content">
+                        <div class="loading-preview">
+                            <span>⏳</span> Cargando vista previa...
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-note">
+                    <strong>⚠️ Nota importante:</strong>
+                    El archivo debe tener permisos públicos "Cualquier persona con el enlace"
+                    para que funcione correctamente.
+                </div>
+            </div>
+
+            <div id="error" class="error hidden">
+                <span class="icon">❌</span>
+                <span id="errorMessage"></span>
+            </div>
+
+            <div class="examples">
+                <h3>📄 Formatos con vista previa:</h3>
+                <ul>
+                    <li>✅ PDF (.pdf)</li>
+                    <li>✅ Word (.doc, .docx)</li>
+                    <li>✅ Excel (.xls, .xlsx)</li>
+                    <li>✅ PowerPoint (.ppt, .pptx)</li>
+                    <li>✅ Imágenes (.jpg, .png, .gif)</li>
+                    <li>✅ Texto (.txt)</li>
+                    <li>❌ HTML, ZIP, ejecutables (solo descarga)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <span class="feature-icon">⚡</span>
+                <h3>Descarga Directa</h3>
+                <p>Omite la página de vista previa</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">👁️</span>
+                <h3>Vista Previa</h3>
+                <p>Para PDF, Word, Excel, PowerPoint, imágenes y texto</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🔧</span>
+                <h3>Fácil Integración</h3>
+                <p>Para páginas web y scripts</p>
+            </div>
+        </div>
+
+        <!-- CRÉDITOS -->
+        <div class="credits">
+            <div class="credits-content">
+                <div class="credits-icon">💻</div>
+                <div class="credits-info">
+                    <p class="credits-name">Desarrollado por <strong>PIP. Edwin Ronald Cruz Ruiz</strong></p>
+                    <p class="credits-email">ronald10.pip@gmail.com</p>
+                    <a href="#" id="whatsappLink" class="credits-whatsapp">
+                        💬 ¿Necesitas ayuda? Contáctame
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
